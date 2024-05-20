@@ -20,10 +20,18 @@ class _MysplashState extends State<Mysplash> {
 
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(
-          left: 25,
-          right: 25,
-        ),
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+          colors: [
+            Color(0xFFBDFCE5),
+            Color(0xFFE8F5E9),
+            Color.fromARGB(255, 247, 247, 247),
+            Color(0xFFE8F5E9),
+            Color(0xFFBDFCE5),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        )),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

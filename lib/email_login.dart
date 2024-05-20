@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pinput/pinput.dart';
 
 class Myemaillogin extends StatefulWidget {
   const Myemaillogin({super.key});
@@ -45,6 +44,9 @@ class _MyemailloginState extends State<Myemaillogin> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(
+                height: 15,
+              ),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Email',
@@ -60,6 +62,9 @@ class _MyemailloginState extends State<Myemaillogin> {
                     horizontal: 16.0,
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 15,
               ),
               TextField(
                 decoration: InputDecoration(
@@ -85,7 +90,7 @@ class _MyemailloginState extends State<Myemaillogin> {
                 height: 49,
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff06234B),
+                        backgroundColor: Colors.green.shade700,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     onPressed: () {},

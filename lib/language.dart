@@ -22,6 +22,7 @@ class _MylanguageScreenState extends State<MylanguageScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       supportedLocales: localization.supportedLocales,
       localizationsDelegates: localization.localizationsDelegates,
       home: Mylanguage(),
@@ -59,88 +60,102 @@ class _MylanguageState extends State<Mylanguage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Container(
-            margin: const EdgeInsets.only(
-              left: 25,
-              right: 25,
-            ),
-            child: Column(
-              children: [
-                Container(
-                  alignment: Alignment.center,
-                  height: 350,
-                  width: 350,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/Chimertech_logo.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Text(
-                  LocaleData.title.getString(context),
-                  style: const TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff06234B),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                    width: 300,
-                    height: 50,
-                    child: DropdownButton(
-                      value: _currentLocale,
-                      items: const [
-                        DropdownMenuItem(
-                          value: "en",
-                          child: Text("English"),
-                        ),
-                        DropdownMenuItem(
-                          value: "ta",
-                          child: Text("தமிழ்"),
-                        ),
-                        DropdownMenuItem(
-                          value: "hi",
-                          child: Text("हिंदी"),
-                        ),
-                      ],
-                      onChanged: (value) {
-                        _setLocale(value);
-                      },
-                    )),
-                const SizedBox(
-                  height: 25,
-                ),
-                SizedBox(
-                  height: 50,
-                  width: 300,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Myphonenumber()));
-                    },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff06234B),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10))),
-                    child: Text(
-                      LocaleData.btn1.getString(context),
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
+      body: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+          colors: [
+            Color(0xFFBDFCE5),
+            Color(0xFFE8F5E9),
+            Color.fromARGB(255, 247, 247, 247),
+            Color(0xFFE8F5E9),
+            Color(0xFFBDFCE5),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        )),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Container(
+              margin: const EdgeInsets.only(
+                left: 25,
+                right: 25,
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    height: 350,
+                    width: 350,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/Chimertech_logo.png'),
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                ),
-              ],
+                  Text(
+                    LocaleData.title.getString(context),
+                    style: const TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                      width: 300,
+                      height: 50,
+                      child: DropdownButton(
+                        value: _currentLocale,
+                        items: const [
+                          DropdownMenuItem(
+                            value: "en",
+                            child: Text("English"),
+                          ),
+                          DropdownMenuItem(
+                            value: "ta",
+                            child: Text("தமிழ்"),
+                          ),
+                          DropdownMenuItem(
+                            value: "hi",
+                            child: Text("हिंदी"),
+                          ),
+                        ],
+                        onChanged: (value) {
+                          _setLocale(value);
+                        },
+                      )),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  SizedBox(
+                    height: 50,
+                    width: 300,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Myphonenumber()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green.shade700,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                      child: Text(
+                        LocaleData.btn1.getString(context),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

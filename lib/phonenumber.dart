@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:profile_app/otp.dart';
 import 'package:profile_app/localisation/locales.dart';
+import 'package:profile_app/otp.dart';
 
 class Myphonenumber extends StatefulWidget {
   const Myphonenumber({super.key});
@@ -11,36 +11,44 @@ class Myphonenumber extends StatefulWidget {
 }
 
 class _MyphonenumberState extends State<Myphonenumber> {
-  late FlutterLocalization _flutterLocalization;
-
   TextEditingController countryController = TextEditingController();
 
   @override
   void initState() {
     countryController.text = "+91";
     super.initState();
-    _flutterLocalization = FlutterLocalization.instance;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          backgroundColor: Color(0xFFBDFCE5),
           leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
               },
               icon: const Icon(Icons.arrow_back))),
       body: Container(
-        margin: const EdgeInsets.only(
-          left: 25,
-          right: 25,
-        ),
+        height: double.infinity,
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+          colors: [
+            Color(0xFFBDFCE5),
+            Color(0xFFE8F5E9),
+            Color.fromARGB(255, 247, 247, 247),
+            Color(0xFFE8F5E9),
+            Color(0xFFBDFCE5),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        )),
         child: SingleChildScrollView(
-          child: Container(
-            margin: const EdgeInsets.only(
-              left: 15,
-              right: 15,
+          child: Padding(
+            padding: const EdgeInsets.only(
+              top: 10,
+              left: 35,
+              right: 35,
             ),
             child: Column(
               children: [
@@ -56,7 +64,7 @@ class _MyphonenumberState extends State<Myphonenumber> {
                   ),
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 5,
                 ),
                 Text(
                   LocaleData.title1.getString(context),
@@ -66,17 +74,17 @@ class _MyphonenumberState extends State<Myphonenumber> {
                   ),
                 ),
                 const SizedBox(
-                  height: 7,
+                  height: 4,
                 ),
-                const Text(
-                  "Add your phone number. We'll send a verification code so we know you are real!",
-                  style: TextStyle(
+                Text(
+                  LocaleData.content1.getString(context),
+                  style: const TextStyle(
                     fontSize: 14,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 Container(
                   height: 49,
@@ -118,14 +126,14 @@ class _MyphonenumberState extends State<Myphonenumber> {
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 SizedBox(
                   width: double.infinity,
                   height: 49,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green.shade400,
+                          backgroundColor: Colors.green.shade700,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10))),
                       onPressed: () {
@@ -134,9 +142,9 @@ class _MyphonenumberState extends State<Myphonenumber> {
                             MaterialPageRoute(
                                 builder: (context) => const Myotp()));
                       },
-                      child: const Text(
-                        "Send the code",
-                        style: TextStyle(
+                      child: Text(
+                        LocaleData.btn2.getString(context),
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                         ),
