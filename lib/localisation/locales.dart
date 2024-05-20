@@ -1,10 +1,9 @@
-import 'package:flutter/services.dart';
 import "package:flutter_localization/flutter_localization.dart";
 
 List<MapLocale> LOCALES = [
-  MapLocale("en", LocaleData.EN),
-  MapLocale("ta", LocaleData.TA),
-  MapLocale("hi", LocaleData.HI),
+  const MapLocale("en", LocaleData.EN),
+  const MapLocale("ta", LocaleData.TA),
+  const MapLocale("hi", LocaleData.HI),
 ];
 mixin LocaleData {
   //page 1

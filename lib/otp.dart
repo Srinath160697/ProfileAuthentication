@@ -3,6 +3,7 @@ import 'package:flutter_localization/flutter_localization.dart';
 import 'package:pinput/pinput.dart';
 import 'package:profile_app/email_login.dart';
 import 'package:profile_app/localisation/locales.dart';
+import 'package:profile_app/loginpages.dart';
 
 class Myotp extends StatefulWidget {
   const Myotp({super.key});
@@ -39,7 +40,7 @@ class _MyotpState extends State<Myotp> {
     );
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xFFBDFCE5),
+          backgroundColor: const Color(0xFFBDFCE5),
           leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
@@ -117,7 +118,12 @@ class _MyotpState extends State<Myotp> {
                           backgroundColor: Colors.green.shade700,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10))),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Myloginpages()));
+                      },
                       child: Text(
                         LocaleData.btn3.getString(context),
                         // "Verify Phone Number",

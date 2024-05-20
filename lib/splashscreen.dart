@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:profile_app/language.dart';
 
 class Mysplash extends StatefulWidget {
-  const Mysplash({Key? key}) : super(key: key);
+  const Mysplash({super.key});
 
   @override
   State<Mysplash> createState() => _MysplashState();

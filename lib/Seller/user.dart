@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:profile_app/Farmer/farm.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class Myuser extends StatefulWidget {
+  const Myuser({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Myuser> createState() => _MyuserState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyuserState extends State<Myuser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.fromLTRB(25, 0, 25, 10),
+          padding: const EdgeInsets.fromLTRB(25, 0, 25, 10),
           child: Column(
             children: [
               const CircleAvatar(
@@ -227,11 +226,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => MyFarm()));
-        },
-        backgroundColor: Color(0xff06234B),
+        onPressed: () {},
+        backgroundColor: const Color(0xff06234B),
         elevation: 20,
         shape: const CircleBorder(),
         child: const Icon(

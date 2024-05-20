@@ -25,12 +25,12 @@ class _MylanguageScreenState extends State<MylanguageScreen> {
       debugShowCheckedModeBanner: false,
       supportedLocales: localization.supportedLocales,
       localizationsDelegates: localization.localizationsDelegates,
-      home: Mylanguage(),
+      home: const Mylanguage(),
     );
   }
 
   void configureLocalization() {
-    localization.init(mapLocales: LOCALES, initLanguageCode: "ta");
+    localization.init(mapLocales: LOCALES, initLanguageCode: "en");
     localization.onTranslatedLanguage = onTranslatedLanguage;
   }
 
